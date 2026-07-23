@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { gravatarPath } from "../gravatar";
 import MessageField from "./MessageField";
+import MessageSubmitButton from "./MessageSubmitButton";
 
 import { makeStyles } from "@material-ui/core/styles";
 import { Grid, Avatar } from "@material-ui/core";
@@ -27,7 +28,7 @@ const MessageInputField = ({ name }) => {
           <MessageField text={text} setText={setText} />
         </Grid>
         <Grid item xs={1}>
-          ボタン
+          <MessageSubmitButton name={name} text={text} setText={setText} />
         </Grid>
       </Grid>
     </div>
