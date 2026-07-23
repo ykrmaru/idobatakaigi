@@ -1,16 +1,17 @@
-import React, { useState } from "react";
+import React from "react";
 import { pushMessage } from "../firebase";
 
 import { IconButton } from "@material-ui/core";
 import { Send } from "@material-ui/icons";
 
-const MessageSubmitButton = ({ name, text, setText }) => {
+const MessageSubmitButton = ({ inputEl, name, text, setText }) => {
   return (
     <IconButton
       disabled={text.length === 0}
       onClick={() => {
         pushMessage({ name: "まるさん", text });
         setText("");
+        inputEl.current.focus();
       }}
     >
       <Send />
